@@ -20,7 +20,7 @@ describe('Register use case', () => {
       password: '12345678',
     })
 
-    expect(user).toEqual(expect.any(String))
+    expect(user.id).toEqual(expect.any(String))
   })
 
   it('should has user password upon registration', async () => {
@@ -53,7 +53,7 @@ describe('Register use case', () => {
       password: '123456',
     })
 
-    expect(() =>
+    await expect(() =>
       registerUseCase.execute({
         name: 'John Doe',
         email,
